@@ -10,3 +10,4 @@ def test_pipeline_accuracy():
     best_k, accuracy = run_pipeline()
     assert accuracy > 0.6
     assert best_k in {1, 3, 5, 7, 9}
+

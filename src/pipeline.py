@@ -5,7 +5,6 @@ from .knn import (
     accuracy_metric,
 )
 
-
 def tune_num_neighbors(train, val, k_values):
     """Return the k in ``k_values`` that performs best on ``val``."""
     best_k = None
