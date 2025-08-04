@@ -7,5 +7,7 @@ from src.pipeline import run_pipeline
 
 
 def test_pipeline_accuracy():
-    accuracy = run_pipeline()
+    best_k, accuracy = run_pipeline()
     assert accuracy > 0.6
+    assert best_k in {1, 3, 5, 7, 9}
+
