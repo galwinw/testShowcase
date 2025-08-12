@@ -18,6 +18,7 @@ import argparse
 import os
 from itertools import combinations
 from typing import Dict, Iterable, List, Tuple
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -49,6 +50,11 @@ try:  # lifelines for survival analysis
     LIFELINES_AVAILABLE = True
 except Exception:  # pragma: no cover - handled gracefully
     LIFELINES_AVAILABLE = False
+
+# Silence common FutureWarnings from third-party libraries to keep console output clean
+warnings.filterwarnings("ignore", category=FutureWarning, module="seaborn")
+warnings.filterwarnings("ignore", category=FutureWarning, module="pandas")
+warnings.filterwarnings("ignore", category=FutureWarning, module="sklearn")
 
 
 def ensure_output_dir(path: str) -> None:
